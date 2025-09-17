@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="nav-logo">MyPortfolio</div>
+
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li>
+                <a href="#projects" class="nav-link">Projects ▾</a>
+                <ul>
+                    <li><a href="#webapps">Web Apps</a></li>
+                    <li><a href="#mobileapps">Mobile Apps</a></li>
+                    <li><a href="#aiml">AI/ML</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div style="display:flex;align-items:center;gap:12px;">
+            <div class="nav-search" id="navSearch">
+                <span id="searchIcon" style="cursor:pointer;">🔍</span>
+                <input type="text" placeholder="Search...">
+            </div>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <ul class="mobile-menu" id="mobileMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Dummy sections for scroll demonstration -->
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Left Side Content -->
+        <div class="hero-content">
+            <h1>Hi, I'm <span style="color:#00d9ff;">Nanthakumar</span></h1>
+            <div class="typing" id="typing"></div>
+            <p>
+                I’m a passionate developer specializing in creating modern, scalable web
+                and mobile applications. I love turning complex problems into simple,
+                elegant solutions.
+            </p>
+            <div class="btn-group">
+                <button class="btn hire">Hire Me</button>
+                <button class="btn cv">Download CV</button>
+            </div>
+            <div class="socials">
+                <a href="#" target="_blank">🌐</a>
+                <a href="#" target="_blank">💼</a>
+                <a href="#" target="_blank">🐦</a>
+            </div>
+        </div>
+
+        <!-- Right Side Image -->
+        <div class="hero-image">
+            <div class="profile-wrapper">
+                <img src="nantha.jpg" alt="Profile Image">
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="aboutHeading">
+        <!-- LEFT: Profile styled image -->
+        <div class="profile reveal" data-reveal>
+            <div class="frame" title="Profile image">
+                <!-- Replace src with your image path -->
+                <img src="nantha.jpg"
+                    alt="Profile photo">
+            </div>
+        </div>
+
+        <!-- RIGHT: Text content -->
+        <div class="content">
+            <h2 id="aboutHeading">About Me</h2>
+
+            <!-- Short bio / intro -->
+            <p class="lead reveal" data-reveal>
+                I'm <strong>Your Name</strong>, a passionate software engineer focused on building
+                scalable web and mobile applications. I enjoy designing simple solutions for complex problems,
+                particularly in full-stack development and AI/ML integration.
+            </p>
+
+            <!-- Buttons -->
+            <div class="actions reveal" data-reveal>
+                <button class="btn resume" id="downloadBtn" title="Download resume">Download Resume</button>
+                <button class="btn hire" id="hireBtn" title="Hire me">Hire Me</button>
+            </div>
+
+            <!-- Skills: tags + animated progress -->
+            <div class="skills reveal" data-reveal>
+                <!-- tags -->
+                <div style="display:flex;flex-direction:column;gap:8px;">
+                    <div class="skill-tag">💻 HTML</div>
+                    <div class="skill-tag">🎨 CSS</div>
+                    <div class="skill-tag">🟨 JavaScript</div>
+                    <div class="skill-tag">⚛️ React</div>
+                </div>
+
+                <!-- progress column -->
+                <div class="progress-col">
+                    <div class="skill">
+                        <div class="label"><span>Node.js</span><span class="muted">85%</span></div>
+                        <div class="bar">
+                            <div class="fill" data-fill="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="label"><span>MongoDB</span><span class="muted">75%</span></div>
+                        <div class="bar">
+                            <div class="fill" data-fill="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="label"><span>AI / ML</span><span class="muted">68%</span></div>
+                        <div class="bar">
+                            <div class="fill" data-fill="68"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline / experience -->
+            <div class="timeline reveal" data-reveal>
+                <div class="item">
+                    <div class="dot">🎓</div>
+                    <div class="meta">
+                        <h4>B.Tech in Information Technology — Mohamed Sathak Engineering Collage</h4>
+                        <div class="muted">2016 — 2020 · Graduated with distinction. Focus: Algorithms & ML</div>
+                    </div>
+                </div>
+
+               
+            </div>
+        </div>
+    </section>
+    <section class="skills-section" id="skills">
+        <h2>My Skills</h2>
+
+        <!-- Category Tabs -->
+        <div class="tabs" id="skillsTabs"></div>
+
+        <!-- Skill Content -->
+        <div id="skillsContent"></div>
+    </section>
+    <section class="projects-section" id="projects" aria-labelledby="projectsHeading">
+        <div class="projects-header">
+            <h2 id="projectsHeading">Selected Projects</h2>
+
+            <div class="controls">
+                <div class="search" title="Search projects">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="opacity:.85;">
+                        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                    <input id="search" placeholder="Search projects or tech (e.g., React)..."
+                        aria-label="Search projects">
+                </div>
+
+                <div class="tabs" id="tabs" role="tablist" aria-label="Project categories"></div>
+            </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid" id="grid" aria-live="polite"></div>
+    </section>
+    <!-- Modal for project details -->
+    <div class="modal" id="modal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div style="display:flex;flex-direction:column;gap:12px;">
+                <img id="modalImg" src="" alt="Project screenshot">
+                <div style="display:flex;gap:8px;">
+                    <button class="close" id="modalClose">Close</button>
+                    <a id="modalDemo" class="btn demo" target="_blank" rel="noopener">Live Demo</a>
+                    <a id="modalRepo" class="btn repo" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+            <div>
+                <h3 id="modalTitle" style="margin-top:0"></h3>
+                <p id="modalDesc" class="muted"></p>
+                <div style="margin-top:12px;">
+                    <strong>Tech:</strong> <span id="modalTech" class="small muted"></span>
+                </div>
+                <div style="margin-top:12px;">
+                    <strong>Highlights</strong>
+                    <ul id="modalHighlights" class="muted small"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="contact-section" id="contact">
+        <!-- Left Side: Info -->
+        <div class="contact-info">
+            <h2>Contact Me</h2>
+            <div class="info-item" onclick="copyToClipboard('nantha1234789@gmail.com')">
+                <span>📧</span> nantha123789@gmail.com
+            </div>
+            <div class="info-item">
+                <span>📱</span> <a href="tel:+91 9626954002">+91 9626954002</a>
+            </div>
+            <div class="info-item">
+                <span>📍</span> Ramanathapuram, India
+            </div>
+
+            <!-- Socials -->
+            <div class="socials">
+                <a href="#" target="_blank">🐱</a>
+                <a href="#" target="_blank">💼</a>
+                <a href="#" target="_blank">🐦</a>
+                <a href="#" target="_blank">📸</a>
+            </div>
+
+            <!-- Google Map -->
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d15745.657287309616!2d78.92033904790884!3d9.38498478159587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1758071186254!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <!-- Right Side: Form -->
+        <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" />
+                    <div class="error" id="nameError"></div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" />
+                    <div class="error" id="emailError"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" placeholder="Subject" />
+                    <div class="error" id="subjectError"></div>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Message"></textarea>
+                    <div class="error" id="messageError"></div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <!-- Column 1 -->
+            <div class="footer-brand">
+                <h2>Nanthakumar</h2>
+                <p>Building modern and scalable digital solutions with passion.</p>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="footer-social">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <a href="#" target="_blank">🐱</a>
+                    <a href="#" target="_blank">💼</a>
+                    <a href="#" target="_blank">🐦</a>
+                    <a href="#" target="_blank">📸</a>
+                </div>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="footer-newsletter">
+                <h3>Newsletter</h3>
+                <div class="newsletter-box">
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email">
+                    <button onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-contact">
+            <p><span>📧</span> nantha1234789@gmail.com</p>
+            <p><span>📱</span> +91 9626954002</p>
+            <p><span>📍</span>Ramanathapuram India</p>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            © 2025 Nanthakumar. All Rights Reserved.
+        </div>
+
+        <!-- Back to Top -->
+        <button class="back-to-top" onclick="scrollToTop()">↑</button>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // ===========================
+        // STICKY NAVBAR
+        // ===========================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) navbar.classList.add('sticky');
+            else navbar.classList.remove('sticky');
+        });
+
+        // ===========================
+        // MOBILE MENU TOGGLE
+        // ===========================
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // ===========================
+        // DARK/LIGHT MODE
+        // ===========================
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            if (document.body.classList.contains('light')) {
+                document.body.style.background = 'var(--bg-light)';
+                document.body.style.color = 'var(--text-light)';
+                themeToggle.textContent = '🌞';
+            } else {
+                document.body.style.background = 'var(--bg)';
+                document.body.style.color = 'var(--text)';
+                themeToggle.textContent = '🌙';
+            }
+        });
+
+        // ===========================
+        // SCROLL SPY / ACTIVE LINK
+        // ===========================
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                const top = sec.offsetTop - 80;
+                const height = sec.offsetHeight;
+                if (pageYOffset >= top && pageYOffset < top + height) {
+                    current = sec.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active-link');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active-link');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
